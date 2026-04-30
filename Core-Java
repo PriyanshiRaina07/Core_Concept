@@ -1,0 +1,1619 @@
+1. Who invented Java Programming?
+a) Guido van Rossum
+b) James Gosling
+c) Dennis Ritchie
+d) Bjarne Stroustrup
+Answer: b
+Explanation: Java programming was developed by James Gosling at Sun Microsystems in 1995. James Gosling is well known as the father of Java.
+
+
+2. Which statement is true about Java?
+a) Java is a sequence-dependent programming language
+b) Java is a code dependent programming language
+c) Java is a platform-dependent programming language
+d) Java is a platform-independent programming language
+Answer: d
+Explanation: Java is called ‘Platform Independent Language’ as it primarily works on the principle of ‘compile once, run everywhere’.
+
+
+3. Which component is used to compile, debug and execute the java programs?
+a) JRE
+b) JIT
+c) JDK
+d) JVM
+Answer: c
+Explanation: JDK is a core component of Java Environment and provides all the tools, executables and binaries required to compile, debug and execute a Java Program.
+
+
+4. Which one of the following is not a Java feature?
+a) Object-oriented
+b) Use of pointers
+c) Portable
+d) Dynamic and Extensible
+Answer: b
+Explanation: Pointers is not a Java feature. Java provides an efficient abstraction layer for developing without using a pointer in Java. Features of Java Programming are Portable, Architectural Neutral, Object-Oriented, Robust, Secure, Dynamic and Extensible, etc.
+
+
+5. Which of these cannot be used for a variable name in Java?
+a) identifier & keyword
+b) identifier
+c) keyword
+d) none of the mentioned
+Answer: c
+Explanation: Keywords are specially reserved words that can not be used for naming a user-defined variable, for example: class, int, for, etc.
+
+
+6. What is the extension of java code files?
+a) .js
+b) .txt
+c) .class
+d) .java
+Answer: d
+Explanation: Java files have .java extension.
+
+
+7. What will be the output of the following Java code?
+
+    class increment {
+        public static void main(String args[]) 
+        {        
+             int g = 3;
+             System.out.print(++g * 8);
+        } 
+    }
+a) 32
+b) 33
+c) 24
+d) 25
+Answer: a
+Explanation: Operator ++ has more preference than *, thus g becomes 4 and when multiplied by 8 gives 32.
+output:
+$ javac increment.java
+$ java increment
+32
+
+
+8. Which environment variable is used to set the java path?
+a) MAVEN_Path
+b) JavaPATH
+c) JAVA
+d) JAVA_HOME
+Answer: d
+Explanation: JAVA_HOME is used to store a path to the java installation.
+
+
+9. What will be the output of the following Java program?
+
+class output {
+        public static void main(String args[]) 
+        {
+            double a, b,c;
+            a = 3.0/0;
+            b = 0/4.0;
+            c=0/0.0;
+ 
+	    System.out.println(a);
+            System.out.println(b);
+            System.out.println(c);
+        } 
+    }
+a) NaN
+b) Infinity
+c) 0.0
+d) all of the mentioned
+Answer: d
+Explanation: For floating point literals, we have constant value to represent (10/0.0) infinity either positive or negative and also have NaN (not a number for undefined like 0/0.0), but for the integral type, we don’t have any constant that’s why we get an arithmetic exception.
+advertisement
+
+
+10. Which of the following is not an OOPS concept in Java?
+a) Polymorphism
+b) Inheritance
+c) Compilation
+d) Encapsulation
+Answer: c
+Explanation: There are 4 OOPS concepts in Java. Inheritance, Encapsulation, Polymorphism and Abstraction.
+
+
+11. What is not the use of “this” keyword in Java?
+a) Referring to the instance variable when a local variable has the same name
+b) Passing itself to the method of the same class
+c) Passing itself to another method
+d) Calling another constructor in constructor chaining
+Answer: b
+Explanation: “this” is an important keyword in java. It helps to distinguish between local variable and variables passed in the method as parameters.
+
+
+12. What will be the output of the following Java program?
+
+    class variable_scope 
+    {
+        public static void main(String args[]) 
+        {
+            int x;
+            x = 5;
+            {
+	        int y = 6;
+	        System.out.print(x + " " + y);
+            }
+            System.out.println(x + " " + y);
+        } 
+    }
+a) Compilation error
+b) Runtime error
+c) 5 6 5 6
+d) 5 6 5
+Answer: a
+Explanation: Second print statement doesn’t have access to y , scope y was limited to the block defined after initialization of x.
+output:
+$ javac variable_scope.java
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: y cannot be resolved to a variable
+
+
+13. What will be the error in the following Java code?
+
+    byte b = 50;
+    b = b * 50;
+a) b cannot contain value 50
+b) b cannot contain value 100, limited by its range
+c) No error in this code
+d) * operator has converted b * 50 into int, which can not be converted to byte without casting
+Answer: d
+Explanation: While evaluating an expression containing int, bytes or shorts, the whole expression is converted to int then evaluated and the result is also of type int.
+
+
+14. Which of the following is a type of polymorphism in Java Programming?
+a) Multiple polymorphism
+b) Compile time polymorphism
+c) Multilevel polymorphism
+d) Execution time polymorphism
+Answer: b
+Explanation: There are two types of polymorphism in Java. Compile time polymorphism (overloading) and runtime polymorphism (overriding).
+
+
+15. What will be the output of the following Java program?
+
+    class leftshift_operator 
+    {
+        public static void main(String args[]) 
+        {        
+             byte x = 64;
+             int i;
+             byte y; 
+             i = x << 2;
+             y = (byte) (x << 2);
+             System.out.print(i + " " + y);
+        } 
+    }
+a) 0 256
+b) 0 64
+c) 256 0
+d) 64 0
+Answer: c
+Explanation: A variable of type int can store values within 32 bits, while a byte has only 8 bits to store any value. The expression (64 << 2) results in 256, which requires at least 9 bits to represent. Therefore:
+For byte: The 9th bit is lost (truncated), and the remaining 8 bits are all zeros, resulting in zero.
+For int: All significant bits are preserved, allowing the value 256 to be stored correctly.
+output:
+$ javac leftshift_operator.java
+$ java leftshift_operator
+256 0
+
+
+16. What will be the output of the following Java code?
+
+    class box 
+    {
+        int width;
+        int height;
+        int length;
+    } 
+    class main
+    {
+        public static void main(String args[]) 
+        {        
+             box obj = new box();
+             obj.width = 10;
+             obj.height = 2;
+             obj.length = 10;
+             int y = obj.width * obj.height * obj.length; 
+             System.out.print(y);
+        } 
+    }
+a) 100
+b) 400
+c) 200
+d) 12
+Answer: c
+Explanation: The variables length, breadth, and height are default (friendly) instance variables of the Box class. Therefore, they can be accessed directly by the object. The variable y stores the product of these three variables, resulting in an output of 200.
+output:
+$ javac main.java
+$ java main
+200
+
+
+17. What is Truncation in Java?
+a) Floating-point value assigned to a Floating type
+b) Floating-point value assigned to an integer type
+c) Integer value assigned to floating type
+d) Integer value assigned to floating type
+Answer: b
+Explanation: Truncation refers to the removal of digits after the decimal point. When a floating-point value (float, double, etc.) is assigned to an integer type (int, long, etc.), the fractional part after the decimal point is discarded.
+Note: This operation requires explicit type casting.
+
+
+18. What will be the output of the following Java program?
+
+   class Output
+   {
+       public static void main(String args[])
+       {
+           int arr[] = {1, 2, 3, 4, 5};
+           for ( int i = 0; i < arr.length - 2; ++i)
+               System.out.print(arr[i] + " ");
+       }
+   }
+a) 1 2 3 4 5
+b) 1 2 3 4
+c) 1 2
+d) 1 2 3
+Answer: d
+Explanation:
+Explanation: Since, arr.length() is 5, then the loop is iterate for 0, 1, 2. Which prints the 1, 2, 3, respectively.
+output:
+$ javac Output.java
+$ java Output
+1 2 3
+
+
+19. What will be the output of the following Java code snippet?
+
+class abc
+{
+    public static void main(String args[])
+    {
+        if(args.length>0)
+        System.out.println(args.length);
+    }
+}
+a) The snippet compiles and runs but does not print anything
+b) The snippet compiles, runs and prints 0
+c) The snippet compiles, runs and prints 1
+d) The snippet does not compile
+Answer: a
+Explanation: As no argument is passed to the code, the length of args is 0. So the code will not print.
+
+
+20. What is the extension of compiled java classes?
+a) .txt
+b) .js
+c) .class
+d) .java
+Answer: c
+Explanation: The compiled java files have .class extension.
+
+21. Which exception is thrown when java is out of memory?
+a) MemoryError
+b) OutOfMemoryError
+c) MemoryOutOfBoundsException
+d) MemoryFullException
+Answer: b
+Explanation: The Xms flag has no default value, and Xmx typically has a default value of 256MB. A common use for these flags is when you encounter a java.lang.OutOfMemoryError.
+
+
+22. What will be the output of the following Java code?
+
+    class String_demo 
+    {
+        public static void main(String args[])
+        {
+            char chars[] = {'a', 'b', 'c'};
+            String s = new String(chars);
+            System.out.println(s);
+        }
+   }
+a) abc
+b) a
+c) b
+d) c
+Answer: a
+Explanation: String(chars) is a constructor of class string, it initializes string s with the values stored in character array chars, therefore s contains “abc”.
+
+
+23. Which of these are selection statements in Java?
+a) break
+b) continue
+c) for()
+d) if()
+Answer: d
+Explanation: Continue and break are jump statements, and for is a looping statement.
+
+
+24. What will be the output of the following Java program?
+
+    class recursion 
+    {
+        int func (int n) 
+        {
+            int result;
+            if (n == 1)
+                return 1;
+            result = func (n - 1);
+            return result;
+        }
+    } 
+    class Output 
+    {
+        public static void main(String args[]) 
+        {
+            recursion obj = new recursion() ;
+            System.out.print(obj.func(5));
+        }
+    }
+a) 1
+b) 120
+c) 0
+d) None of the mentioned
+Answer: a
+Explanation: The base case returns the value 1 for each call, which is stored in 1 and returned inside the main() where it is called.
+Output:
+$ javac Output.javac
+$ java Output
+1
+
+
+25. What will be the output of the following Java code?
+
+    class output 
+    {
+        public static void main(String args[])
+        { 
+           String c = "Hello i love java";
+           boolean var;
+           var = c.startsWith("hello");
+           System.out.println(var);
+        }
+    }
+a) 0
+b) true
+c) 1
+d) false
+Answer: d
+Explanation: The startsWith() method is case-sensitive; for example, “hello” and “Hello” are treated as different strings. Therefore, the result of the method is false, which is stored in the variable since the return type of startsWith() is boolean.
+Note: Although var is a keyword used for type inference in Java, it can still be used as an identifier in earlier versions where var is not a reserved keyword.
+
+
+26. Which of these keywords is used to define interfaces in Java?
+a) intf
+b) Intf
+c) interface
+d) Interface
+Answer: c
+Explanation: interface keyword is used to define interfaces in Java.
+
+
+27. What will be the output of the following Java program?
+
+    class output 
+    {
+        public static void main(String args[])
+        { 
+           StringBuffer s1 = new StringBuffer("Quiz");
+           StringBuffer s2 = s1.reverse();
+           System.out.println(s2);
+        }
+    }
+a) QuizziuQ
+b) ziuQQuiz
+c) Quiz
+d) ziuQ
+Answer: d
+Explanation: reverse() method reverses all characters. It returns the reversed object on which it was called.
+Output:
+$ javac output.java
+$ java output
+ziuQ
+
+
+28. What will be the output of the following Java code?
+
+    class Output 
+    {
+        public static void main(String args[]) 
+        {
+            Integer i = new Integer(257);  
+            byte x = i.byteValue();
+            System.out.print(x);
+        }
+    }
+a) 257
+b) 256
+c) 1
+d) 0
+Answer: c
+Explanation: i.byteValue() method returns the value of wrapper i as a byte value. i is 257, range of byte is 256 therefore i value exceeds byte range by 1 hence 1 is returned and stored in x.
+Output:
+$ javac Output.java
+$ java Output
+1
+
+
+29. What will be the output of the following Java program?
+
+    class Output 
+    {
+         public static void main(String args[]) 
+        {
+            double x = 2.0;  
+            double y = 3.0;
+            double z = Math.pow( x, y );
+            System.out.print(z);
+        }
+    }
+a) 9.0
+b) 8.0
+c) 4.0
+d) 2.0
+Answer: b
+Explanation: Math.pow(x, y) methods returns the value of y to the power x as double {floating point data type}, i:e x ^ y, 2.0 ^ 3.0 = 8.0.
+Output:
+$ javac Output.java
+$ java Output
+8.0
+
+
+30. Which of the following is a superclass of every class in Java?
+a) ArrayList
+b) Abstract class
+c) Object class
+d) String
+Answer: c
+Explanation: Object class is superclass of every class in Java.
+
+
+31. What will be the output of the following Java code?
+
+    class Output 
+    {
+         public static void main(String args[]) 
+         {
+             double x = 3.14;  
+             int y = (int) Math.ceil(x);
+             System.out.print(y);
+         }
+    }
+a) 3
+b) 0
+c) 4
+d) 3.0
+Answer: c
+Explanation: ciel(double X) returns the smallest whole number greater than or equal to variable x.
+Output:
+$ javac Output.java
+$ java Output
+4
+
+
+32. What will be the output of the following Java program?
+
+    import java.net.*;
+    class networking 
+    {
+        public static void main(String[] args) throws Exception 
+        {
+            URL obj = new URL("https://www.sanfoundry.com/javamcq");
+            URLConnection obj1 = obj.openConnection();
+            int len = obj1.getContentLength();
+            System.out.print(len);
+        }
+    }
+Note: Host URL is having length of content 127.
+a) 127
+b) 126
+c) Runtime Error
+d) Compilation Error
+Answer: a
+Explanation: The getContentLength() method returns the content length of the resource referenced by the URL of this connection. If the content length is unknown or exceeds Integer.MAX_VALUE, the method returns -1.
+Output:
+$ javac networking.java
+$ java networking 
+127
+
+
+33. Which of the below is not a Java Profiler?
+a) JProfiler
+b) Eclipse Profiler
+c) JVM
+d) JConsole
+Answer: c
+Explanation: Memory leak is like holding a strong reference to an object although it would never be needed anymore. Objects that are reachable but not live are considered memory leaks. Various tools help us to identify memory leaks.
+
+
+34. What will be the output of the following Java program?
+
+    import java.net.*;
+    class networking
+    {
+        public static void main(String[] args) throws MalformedURLException
+        {
+            URL obj = new URL("https://www.sanfoundry.com/javamcq");
+            System.out.print(obj.toExternalForm());
+        }
+    }
+a) www.sanfoundry.com
+b) https://www.sanfoundry.com/javamcq
+c) sanfoundry
+d) sanfoundry.com
+Answer: b
+Explanation: toExternalForm() is used to know the full URL of an URL object.
+Output:
+$ javac networking.java
+$ java networking 
+https://www.sanfoundry.com/javamcq
+
+
+35. What will be the output of the following Java code snippet?
+
+   import java.util.*;
+   class Arraylists
+   {
+       public static void main(String args[])
+       {
+           ArrayList obj = new ArrayList();
+           obj.add("A");
+           obj.add("B");
+           obj.add("C");
+           obj.add(1, "D");
+           System.out.println(obj);
+       }
+   }
+a) [A, D, C]
+b) [A, B, C]
+c) [A, B, C, D]
+d) [A, D, B, C]
+Answer: d
+Explanation: obj is an object of class ArrayLists hence it is an dynamic array which can increase and decrease its size. obj.add(“X”) adds to the array element X and obj.add(1,”X”) adds element x at index position 1 in the list, Hence obj.add(1,”D”) stores D at index position 1 of obj and shifts the previous value stored at that position by 1.
+Output:
+$ javac Arraylist.java
+$ java Arraylist
+[A, D, B, C].
+
+
+36. Which of these packages contains the error StackOverflowError in Java?
+a) java.io
+b) java.system
+c) java.lang
+d) java.util
+Answer: c
+Explanation: The exception Stack Overflow in Java is actually called StackOverflowError and it is located in the java.lang.
+
+
+37. What will be the output of the following Java program?
+
+    import java.util.*;
+    class Collection_iterators 
+    {
+        public static void main(String args[]) 
+        {
+            LinkedList list = new LinkedList();
+            list.add(new Integer(2));
+            list.add(new Integer(8));
+            list.add(new Integer(5));
+            list.add(new Integer(1));
+            Iterator i = list.iterator();
+            Collections.reverse(list);
+	    Collections.sort(list);
+            while(i.hasNext())
+	        System.out.print(i.next() + " ");
+        }
+    }
+a) 1 2 5 8
+b) 2 1 8 5
+c) 1 5 8 2
+d) 2 8 5 1
+Answer: a
+Explanation: Collections.sort(list) sorts the given list, the list was 2->8->5->1 after sorting it became 1->2->5->8.
+Output:
+1 2 5 8
+
+
+38. Which of these statements is incorrect about Thread?
+a) start() method is used to begin execution of the thread
+b) run() method is used to begin execution of a thread before start() method in special cases
+c) A thread can be formed by implementing Runnable interface only
+d) A thread can be formed by a class that extends Thread class
+Answer: b
+Explanation: run() method is used to define the code that constitutes the new thread, it contains the code to be executed. start() method is used to begin execution of the thread that is execution of run(). run() itself is never used for starting execution of the thread.
+
+
+39. Which of these keywords are used for the block to be examined for exceptions?
+a) check
+b) throw
+c) catch
+d) try
+Answer: d
+Explanation: try is used for the block that needs to checked for exception.
+
+
+40. What will be the output of the following Java code?
+
+   class newthread extends Thread
+   {
+	Thread t1, t2;
+	newthread()
+       {
+	    t1 = new Thread(this,"Thread_1");
+	    t2 = new Thread(this,"Thread_2");
+	    t1.start();
+	    t2.start();
+	}
+	public void run()
+       {
+	    t2.setPriority(Thread.MAX_PRIORITY);	
+	    System.out.print(t1.equals(t2));
+       }   
+   }
+   class multithreaded_programing
+   {
+       public static void main(String args[])
+       {
+           new newthread();       
+       }
+   }
+a) truetrue
+b) falsefalse
+c) true
+d) false
+Answer: b
+Explanation: Threads t1 and t2 are created by the NewThread class, which implements the Runnable interface. Therefore, both threads have their own run() methods defining the actions to be performed. When the constructor of the NewThread class is invoked, the run() method of t1 executes first, followed by the run() method of t2. Each execution prints false because the two threads are not equal—one has a different priority than the other. As a result, the output is falsefalse.
+
+
+41. Which one of the following is not an access modifier?
+a) protected
+b) void
+c) public
+d) private
+Answer: b
+Explanation: Public, private, protected and default are the access modifiers.
+
+
+42. What will be the output of the following Java program?
+
+   final class A 
+    {
+         int i;
+    }    
+    class B extends A 
+    {
+        int j;
+        System.out.println(j + " " + i);  
+    }    
+    class inheritance 
+    {
+        public static void main(String args[])
+        {
+            B obj = new B();
+            obj.display();     
+        }
+   }
+a) 2 2
+b) 3 3
+c) Runtime Error
+d) Compilation Error
+Answer: d
+Explanation: class A has been declared final hence it cannot be inherited by any other class. Hence class B does not have member i, giving compilation error.
+output:
+$ javac inheritance.java
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	i cannot be resolved or is not a field
+
+
+43. What is the numerical range of a char data type in Java?
+a) 0 to 256
+b) -128 to 127
+c) 0 to 65535
+d) 0 to 32767
+Answer: c
+Explanation: In Java, the char data type is a 16-bit unsigned integer that uses 2 bytes of memory. It is used to store Unicode characters, such as special symbols, emojis, and more. The range of values it can represent is from 0 to 216 − 1, which is 0 to 65,535. Being an unsigned data type, char can represent only non-negative values, effectively doubling the upper limit compared to a signed type by excluding negative numbers from its range.
+For signed integer types, the range is calculated using the formula:
+−2n-1 to 2n-1 − 1,
+where n is the number of bits used to store the value.
+
+
+44. Which class provides system independent server side implementation?
+a) Server
+b) ServerReader
+c) Socket
+d) ServerSocket
+Answer: d
+Explanation: ServerSocket is a java.net class which provides system independent implementation of server side socket connection.
+
+
+45. What will be the output of the following Java program?
+
+   class overload 
+   {
+        int x;
+ 	double y;
+        void add(int a , int b) 
+        {
+            x = a + b;
+        }
+        void add(double c , double d)
+        {
+            y = c + d;
+        }
+        overload() 
+        {
+            this.x = 0;
+            this.y = 0;
+        }        
+    }    
+    class Overload_methods 
+    {
+        public static void main(String args[])
+        {
+            overload obj = new overload();   
+            int a = 2;
+            double b = 3.2;
+            obj.add(a, a);
+            obj.add(b, b);
+            System.out.println(obj.x + " " + obj.y);     
+        }
+   }
+a) 4 6.4
+b) 6.4 6
+c) 6.4 6.4
+d) 6 6
+Answer: a
+Explanation: For the method call obj.add(a, a), since a is of type int, the method defined at line 5 is executed. Similarly, for the call obj.add(b, b), since b is of type double, the method defined at line 9 is invoked. As a result, the values of x and y are set to 4 and 6.4, respectively.
+Note: This behavior demonstrates polymorphism in Java, where method overloading allows different methods to be invoked based on parameter types.
+output:
+$ javac Overload_methods.java
+$ java Overload_methods 
+4 6.4
+
+
+46. Which of the following is true about servlets?
+a) Servlets can use the full functionality of the Java class libraries
+b) Servlets execute within the address space of web server, platform independent and uses the functionality of java class libraries
+c) Servlets execute within the address space of web server
+d) Servlets are platform-independent because they are written in java
+Answer: b
+Explanation: Servlets execute within the address space of a web server. Since it is written in java it is platform independent. The full functionality is available through libraries.
+
+
+
+INTEGER AND FLOATING DATA TYPES
+
+
+1. What is the range of short data type in Java?
+a) -128 to 127
+b) -32768 to 32767
+c) -2147483648 to 2147483647
+d) None of the mentioned
+Answer: b
+Explanation: In Java, the short data type is a 16-bit signed integer. It uses 2 bytes of memory, and the range it can store is from -215 to 215 – 1, which is -32768 to 32767.
+To find the range of signed integer we use, -2n-1 to 2n-1-1 , where the n is the number of bits occupied.
+
+
+2. What is the range of byte data type in Java?
+a) -128 to 127
+b) -32768 to 32767
+c) -2147483648 to 2147483647
+d) None of the mentioned
+Answer: a
+Explanation: In Java, the byte data type is an 8-bit signed integer that occupies 1 byte of memory. It can store values in the range from -27 to 27 – 1, which is from -128 to 127.
+
+
+3. Which of the following are legal lines of Java code?
+   1. int w = (int)888.8;
+   2. byte x = (byte)100L;
+   3. long y = (byte)100;
+   4. byte z = (byte)1000L;
+a) 1 and 2
+b) 2 and 3
+c) 3 and 4
+d) All statements are correct
+Answer: d
+Explanation: Statements (1), (2), (3), and (4) are correct. (1) is correct because when a floating-point number (a double in this case) is cast to an int, it simply loses the digits after the decimal. (2) and (4) are correct because a long can be cast into a byte. If the long is over 127, it loses its precision due to narrowing of the conversion. (3) actually works, even though a cast is not necessary, because a long can store a byte.
+
+
+4. An expression involving byte, int, and literal numbers is promoted to which of these?
+a) int
+b) long
+c) byte
+d) float
+Answer: a
+Explanation: An expression involving bytes, ints, shorts, literal numbers, the entire expression is promoted to int before any calculation is done.
+
+
+5. Which of these literals can be contained in float data type variable?
+a) -1.7e+308
+b) -3.4e+038
+c) +1.7e+308
+d) -3.4e+050
+Answer: b
+Explanation: The range of the float data type in Java is approximately -3.4e38 to +3.4e38. This range applies to single-precision floating-point numbers, which typically use 32 bits for storage, consisting of a 1 sign bit, an 8-bit exponent, and a 23-bit mantissa.
+
+
+6. Which data type value is returned by all transcendental math functions?
+a) int
+b) float
+c) double
+d) long
+Answer: c
+Explanation: Only double data type value is returned by all transcendental math functions. Transcendental math functions don’t return int or long, because in most of the cases the transcendental math functions produce are not whole numbers. So, the double data type is used as a return type.
+Note: float is not used because of its less precision than double.
+
+
+7. What will be the output of the following Java code?
+
+    class average {
+        public static void main(String args[])
+        {
+            double num[] = {5.5, 10.1, 11, 12.8, 56.9, 2.5};
+            double result;
+            result = 0;
+            for (int i = 0; i < 6; ++i) 
+                result = result + num[i];
+	    System.out.print(result/6);
+ 
+        } 
+    }
+a) 16.34
+b) 16.566666644
+c) 16.46666666666667
+d) 16.46666666666666
+Answer: c
+Explanation: The program calculates the average of six numbers stored in a double array. It sums all the elements, resulting in 98.8, then divides by 6 to get the average. The final output is 16.46666666666667.
+The discrepancy between 16.46666666666666 and 16.46666666666667 when representing floating-point numbers is due to the way computers store and represent decimal values. Computers use a finite number of bits to represent numbers, which can lead to slight inaccuracies, especially when dealing with non-terminating decimal fractions or values beyond the precision limit.
+In such cases, the compiler limits the precision and rounds off the extra digits to fit within the available memory, leading to small differences in the final result.
+output:
+$ javac average.java
+$ java average
+16.46666666666667
+
+
+8. What will be the output of the following Java code?
+
+class output {
+        public static void main(String args[]) 
+        {
+            double a, b,c;
+            a = 3.0/0;
+            b = 0/4.0;
+            c=0/0.0;
+ 
+	    System.out.println(a);
+            System.out.println(b);
+            System.out.println(c);
+        } 
+    }
+a)
+
+Infinity
+0.0
+NaN
+b)
+
+0.0
+Infinity
+NaN
+c)
+
+NaN
+Infinity
+0.0
+d) none of the mentioned
+Answer: a
+Explanation: For floating point literals, we have constant value to represent (10/0.0) infinity either positive or negative and also have NaN (not a number for undefined like 0/0.0), but for the integral type, we don’t have any constant that’s why we get an arithmetic exception.
+
+
+9. What will be the output of the following Java code?
+
+    class increment {
+        public static void main(String args[]) 
+        {        
+             int g = 3;
+             System.out.print(++g * 8);
+        } 
+    }
+a) 25
+b) 24
+c) 32
+d) 33
+Answer: c
+Explanation: Operator ++ has more preference than *, thus g becomes 4 and when multiplied by 8 gives 32.
+output:
+$ javac increment.java
+$ java increment
+32
+
+
+10. What will be the output of the following Java code?
+
+    class area {
+        public static void main(String args[]) 
+        {    
+             double r, pi, a;
+             r = 9.8;
+             pi = 3.14;
+             a = pi * r * r;
+             System.out.println(a);
+        } 
+    }
+a) 301.5656
+b) 301
+c) 301.56
+d) 301.56560000
+Answer: a
+Explanation: The program calculates the area of a circle using the formula pi * r * r, with r = 9.8 and pi = 3.14. The result is 3.14 × 9.8 × 9.8 = 301.5656. Hence, the output is 301.5656.
+Java displays “301.5656” instead of “301.565600” due to the default formatting behavior of floating-point numbers. By default, Java omits trailing zeros after the decimal point when converting a double or float to a string. This formatting is designed to produce a more concise and human-readable output.
+output:
+$ javac area.java
+$ java area
+301.5656
+
+
+JAVA LITERALS AND VARIABLES 
+
+1. Which of these is long data type literal?
+a) 0x99fffL
+b) ABCDEFG
+c) 0x99fffa
+d) 99671246
+Answer: a
+Explanation: Data type long literals are appended by an upper or lowercase L. 0x99fffL is hexadecimal long literal. Because without the l or L in suffix the compiler will consider it as int.
+
+
+2. Which of these can be returned by the operator &?
+a) Integer
+b) Boolean
+c) Character
+d) Integer or Boolean
+Answer: d
+Explanation: We can use binary ampersand operator on integers/chars (and it returns an integer) or on booleans (and it returns a boolean).
+
+
+3. Literals in java must be appended by which of these to declare it as long?
+a) L
+b) l
+c) D
+d) L and l
+Answer: d
+Explanation: Data type long literals are appended by an upper or lowercase L.
+
+4. Literal can be of which of these data types?
+a) int
+b) float
+c) boolean
+d) all of the mentioned
+Answer: d
+Explanation: int, float, boolean, short, long, etc, are the primitive data type in java.
+
+
+5. Which of these can not be used for a variable name in Java?
+a) identifier
+b) keyword
+c) identifier & keyword
+d) none of the mentioned
+Answer: b
+Explanation: Keywords are specially reserved words which can not be used for naming a user defined variable, example: class, int, for etc.
+
+
+6. What will be the output of the following Java program?
+
+    class evaluate 
+    {
+        public static void main(String args[]) 
+        {
+            int a[] = {1,2,3,4,5};
+	    int d[] = a;
+	    int sum = 0;
+	    for (int j = 0; j < 3; ++j)
+                sum += (a[j] * d[j + 1]) + (a[j + 1] * d[j]);
+	    System.out.println(sum);
+        } 
+    }
+a) 38
+b) 39
+c) 40
+d) 41
+Answer: c
+Explanation: The program defines an integer array a[] = {1, 2, 3, 4, 5} and another array d that references the same array. It uses a loop from j = 0 to 2, and in each iteration, it adds:
+sum+=(a[j]∗d[j+1])+(a[j+1]∗d[j])
+Step-by-step Execution:
+At j = 0: sum += (1 * 2) + (2 * 1) = 2 + 2 = 4
+At j = 1: sum += (2 * 3) + (3 * 2) = 6 + 6 = 12; sum = 4 + 12 = 16
+At j = 2: sum += (3 * 4) + (4 * 3) = 12 + 12 = 24; sum = 16 + 24 = 40
+output:
+$ javac evaluate.java
+$ java evaluate
+40
+
+
+7. What will be the output of the following Java program?
+
+    class array_output 
+    {
+        public static void main(String args[]) 
+        {
+       	    int array_variable [] = new int[10];
+	    for (int i = 0; i < 10; ++i) {
+                array_variable[i] = i/2;
+                array_variable[i]++;
+                System.out.print(array_variable[i] + " ");
+                i++;
+            }
+ 
+        } 
+    }
+a) 0 2 4 6 8
+b) 1 2 3 4 5
+c) 0 1 2 3 4 5 6 7 8 9
+d) 1 2 3 4 5 6 7 8 9 10
+Answer: b
+Explanation: When an array is declared using new operator then all of its elements are initialized to 0 automatically. for loop body is executed 5 times as whenever controls comes in the loop i value is incremented twice, first by i++ in body of loop then by ++i in increment condition of for loop.
+output:
+$ javac array_output.java
+$ java array_output
+1 2 3 4 5
+
+
+8. What will be the output of the following Java program?
+
+    class variable_scope 
+    {
+        public static void main(String args[]) 
+        {
+            int x;
+            x = 5;
+            {
+	        int y = 6;
+	        System.out.print(x + " " + y);
+            }
+            System.out.println(x + " " + y);
+        } 
+    }
+a) 5 6 5 6
+b) 5 6 5
+c) Runtime error
+d) Compilation error
+Answer: d
+Explanation: Second print statement doesn’t have access to y , scope y was limited to the block defined after initialization of x.
+output:
+$ javac variable_scope.java
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: y cannot be resolved to a variable
+
+
+9. Which of these is an incorrect string literal?
+a) “Hello World”
+b) “Hello\nWorld”
+c) “\”Hello World\””
+d)
+
+"Hello
+world"
+Answer: d
+Explanation: All string literals must begin and end in the same line.
+ 
+ 
+10. What will be the output of the following Java program?
+
+    class dynamic_initialization 
+    {
+        public static void main(String args[]) 
+        {
+            double a, b;
+            a = 3.0;
+            b = 4.0;
+	    double c = Math.sqrt(a * a + b * b);
+	    System.out.println(c);
+        } 
+    }
+a) 5.0
+b) 25.0
+c) 7.0
+d) Compilation Error
+Answer: a
+Explanation: In the given expression a * a + b * b, the values of a and b are taken as 3.0 and 4.0, respectively. When the expression is evaluated, it becomes 3.0 * 3.0 + 4.0 * 4.0, which results in 9.0 + 16.0 = 25.0. To find the square root of this result, the Math.sqrt() method is used. This method returns the square root of 25.0, which is 5.0. Since most methods in the Math class return a value of type double, the result is stored in a variable of type double to ensure accuracy and prevent any data type errors. Therefore, the final result 5.0 is dynamically stored in the double variable c.
+output:
+$ javac dynamic_initialization.java
+$ java dynamic_initialization
+5.0
+
+
+TYPE CONVERSIONS ,PROMOTIONS AND CASTING 
+
+1. Which of these is necessary condition for automatic type conversion in Java?
+a) The destination type is smaller than source type
+b) The destination type is larger than source type
+c) The destination type can be larger or smaller than source type
+d) None of the mentioned
+Answer: b
+Explanation: Assignment of a smaller data type to a larger data type allows the compiler to automatically perform type casting without any issues. However, assigning a larger data type to a smaller one may lead to data loss, and therefore, the compiler raises an error or warning to prevent this. This is because the smaller data type may not have the capacity to store the larger value. In contrast, when a value of a smaller data type is assigned to a larger data type, the operation works fine because there is no risk of data loss.
+Note: It is important to note that both size and range matter in automatic type conversion. For example, even though a long occupies 8 bytes and a float only 4 bytes, a long can be automatically type cast to a float because float has a larger range that can represent the value of long. Only similar numeric data types—such as byte, short, char, int, long, float, and double—can be type cast to each other using automatic or explicit conversion.
+
+2. What is the prototype of the default constructor of this Java class?
+    public class prototype { }
+a) prototype( )
+b) prototype(void)
+c) public prototype(void)
+d) public prototype( )
+Answer: d
+Explanation: Since for the class we specified a public access specifier, which means we can use it from outside the environment, i.e., from other packages, it is necessary to define the constructor as public to allow initialization from anywhere. A non-public constructor works only within the same package, but raises exceptions when accessed from outside the current source file.
+
+
+3. What will be the error in the following Java code?
+
+    byte b = 50;
+    b = b * 50;
+a) b cannot contain value 100, limited by its range
+b) * operator has converted b * 50 into int, which can not be converted to byte without casting
+c) b cannot contain value 50
+d) No error in this code
+Answer: b
+Explanation: While evaluating an expression containing int, bytes or shorts, the whole expression is converted to int then evaluated and the result is also of type int.
+advertisement
+
+
+4. If an expression contains double, int, float, long, then the whole expression will be promoted into which of these data types?
+a) long
+b) int
+c) double
+d) float
+Answer: c
+Explanation: If any operand is double the result of an expression is double.
+
+
+5. What is Truncation in Java?
+a) Floating-point value assigned to an integer type
+b) Integer value assigned to floating type
+c) Floating-point value assigned to a Floating type
+d) Integer value assigned to an integer type
+Answer: a
+Explanation: Truncate means to trim some digits of a floating type number or a double type number from right. We can also truncate the decimal portion completely making it an integer type number.
+
+
+6. What will be the output of the following Java code?
+
+    class char_increment 
+    {
+        public static void main(String args[]) 
+        {
+            char c1 = 'D';
+            char c2 = 84;
+            c2++;
+            c1++;
+            System.out.println(c1 + " "  + c2);
+        } 
+    }
+a) E U
+b) U E
+c) V E
+d) U F
+Answer: a
+Explanation: Operator ++ increments the value of character by 1. c1 and c2 are given values D and 84, when we use ++ operator their values increments by 1, c1 and c2 becomes E and U respectively.
+output:
+$ javac char_increment.java
+$ java char_increment
+E U
+
+
+7. What will be the output of the following Java code?
+
+    class conversion 
+    {
+        public static void main(String args[]) 
+        {
+            double a = 295.04;
+            int  b = 300;
+            byte c = (byte) a;
+            byte d = (byte) b;
+            System.out.println(c + " "  + d);
+        } 
+    }
+a) 38 43
+b) 39 44
+c) 295 300
+d) 295.04 300
+Answer: b
+Explanation: Type casting a larger variable into a smaller variable results in modulo of larger variable by range of smaller variable. b contains 300 which is larger than byte’s range i:e -128 to 127 hence d contains 300 modulo 256 i:e 44.
+output:
+$ javac conversion.java
+$ java conversion
+39 44
+
+
+8. What will be the output of the following Java code?
+
+    class A 
+    {
+        final public int calculate(int a, int b) { return 1; } 
+    } 
+    class B extends A 
+    { 
+        public int calculate(int a, int b) { return 2; } 
+    } 
+     public class output 
+     {
+        public static void main(String args[]) 
+        { 
+            B object = new B(); 
+            System.out.print("b is " + b.calculate(0, 1));  
+        } 
+    }
+a) b is : 2
+b) b is : 1
+c) Compilation Error
+d) An exception is thrown at runtime
+Answer: c
+Explanation: The code does not compile because the method calculate() in class A is final and so cannot be overridden by method of class b.
+
+
+9. What will be the output of the following Java program, if we run as “java main_arguments 1 2 3”?
+
+    class main_arguments 
+    {
+        public static void main(String [] args) 
+        {
+            String [][] argument = new String[2][2];
+            int x;
+            argument[0] = args;
+            x = argument[0].length;
+            for (int y = 0; y < x; y++) 
+                System.out.print(" " + argument[0][y]);              
+        }
+    }
+a) 1 1
+b) 1 0
+c) 1 0 3
+d) 1 2 3
+Answer: d
+Explanation: In argument[0] = args;, the reference variable arg[0], which was referring to an array with two elements, is reassigned to an array (args) with three elements.
+Output:
+$ javac main_arguments.java
+$ java main_arguments
+1 2 3
+
+
+10. What will be the output of the following Java program?
+
+    class c 
+    {    
+        public void main( String[] args ) 
+        {  
+            System.out.println( "Hello" + args[0] ); 
+        } 
+    }
+a) Hello c
+b) Hello
+c) Hello world
+d) Runtime Error
+Answer: d
+Explanation: A runtime error will occur owning to the main method of the code fragment not being declared static.
+Output:
+$ javac c.java
+Exception in thread "main" java.lang.NoSuchMethodError: main
+
+ENUM
+
+
+1. What is the order of variables in Enum?
+a) Ascending order
+b) Descending order
+c) Random order
+d) Order of declaration or natural order
+Answer: d
+Explanation: The order of appearance of variables in Enum is their natural order (the natural order means the order in which they are declared inside Enum type). However, the compareTo() method is implemented to order the variable in ascending order.
+
+
+2. Can we create an instance of Enum outside of Enum itself?
+a) True
+b) False
+Answer: b
+Explanation: No, instances of Enum cannot be created outside of Enum boundary, because Enum does not have a public constructor.
+
+
+3. What will be the output of the following Java code?
+
+advertisement
+
+    enum Season 
+    {
+        WINTER, SPRING, SUMMER, FALL
+    };
+    System.out.println(Season.WINTER.ordinal());
+a) 0
+b) 1
+c) 2
+d) 3
+Answer: a
+Explanation: The ordinal() method retrieves the ordinal value of an enum constant, which represents its position within the enum declaration, starting from 0.
+
+
+4. If we try to add Enum constants to a TreeSet, what sorting order will it use?
+a) Sorted in the order of declaration of Enums
+b) Sorted in alphabetical order of Enums
+c) Sorted based on order() method
+d) Sorted in descending order of names of Enums
+Answer: a
+Explanation: Tree Set will sort the values in the order in which Enum constants are declared.
+
+
+5. What will be the output of the following Java code snippet?
+
+advertisement
+class A
+{
+ 
+}
+ 
+enum Enums extends A
+{
+    ABC, BCD, CDE, DEF;
+}
+a) Runtime Error
+b) Compilation Error
+c) It runs successfully
+d) EnumNotDefined Exception
+Answer: b
+Explanation: Enum types cannot extend class.
+
+
+6. What will be the output of the following Java code snippet?
+
+ enum Levels 
+{
+    private TOP,
+ 
+    public MEDIUM,
+ 
+    protected BOTTOM;
+}
+a) Runtime Error
+b) EnumNotDefined Exception
+c) It runs successfully
+d) Compilation Error
+Answer: d
+Explanation: Enum cannot have any modifiers. They are public, static and final by default.
+
+
+7. What will be the output of the following Java code snippet?
+
+enum Enums
+{
+    A, B, C;
+ 
+    private Enums()
+    {
+        System.out.println(10);
+    }
+}
+ 
+public class MainClass
+{
+    public static void main(String[] args)
+    {
+        Enum en = Enums.B;
+    }
+}
+a)
+
+   10
+   10
+   10
+b) Compilation Error
+c)
+
+   10
+   10
+d) Runtime Exception
+Answer: a
+Explanation: The constructor of Enums is called which prints 10.
+
+
+8. Which method returns the elements of Enum class?
+a) getEnums()
+b) getEnumConstants()
+c) getEnumList()
+d) getEnum()
+Answer: b
+Explanation: getEnumConstants() returns the elements of this enum class or null if this Class object does not represent an enum type.
+
+
+9. Which class does all the Enums extend?
+a) Object
+b) Enums
+c) Enum
+d) EnumClass
+Answer: c
+Explanation: All enums implicitly extend java.lang.Enum. Since Java does not support multiple inheritance, an enum cannot extend anything else.
+
+
+10. Are enums are type-safe?
+a) True
+b) False
+Answer: a
+Explanation: Enums are type-safe as they have own name-space.
+
+OOPS 
+
+1. Which of the following is not OOPS concept in Java?
+a) Inheritance
+b) Encapsulation
+c) Polymorphism
+d) Compilation
+Answer: d
+Explanation: There are 4 OOPS concepts in Java. Inheritance, Encapsulation, Polymorphism and Abstraction.
+
+
+2. Which of the following is a type of polymorphism in Java?
+a) Compile time polymorphism
+b) Execution time polymorphism
+c) Multiple polymorphism
+d) Multilevel polymorphism
+Answer: a
+Explanation: There are two types of polymorphism in Java. Compile time polymorphism (overloading) and runtime polymorphism (overriding).
+
+
+3. When does method overloading is determined?
+a) At run time
+b) At compile time
+c) At coding time
+d) At execution time
+Answer: b
+Explanation: Overloading is determined at compile time. Hence, it is also known as compile time polymorphism.
+advertisement
+
+
+4. When Overloading does not occur?
+a) More than one method with same name but different method signature and different number or type of parameters
+b) More than one method with same name, same signature but different number of signature
+c) More than one method with same name, same signature, same number of parameters but different type
+d) More than one method with same name, same number of parameters and type but different signature
+Answer: d
+Explanation: Overloading occurs when more than one method with same name but different constructor and also when same signature but different number of parameters and/or parameter type.
+
+
+5. Which concept of Java is a way of converting real world objects in terms of class?
+a) Polymorphism
+b) Encapsulation
+c) Abstraction
+d) Inheritance
+Answer: c
+Explanation: Abstraction is the concept of defining real world objects in terms of classes or interfaces.
+
+
+6. Which concept of Java is achieved by combining methods and attribute into a class?
+a) Encapsulation
+b) Inheritance
+c) Polymorphism
+d) Abstraction
+Answer: a
+Explanation: Encapsulation is implemented by combining methods and attribute into a class. The class acts like a container of encapsulating properties.
+
+
+7. What is it called if an object has its own lifecycle and there is no dependency?
+a) Aggregation
+b) Composition
+c) Encapsulation
+d) Association
+Answer: d
+Explanation: Association is a general “uses-a” relationship between two independent objects. Both can have their own lifecycles with no dependency on each other.
+Example: A teacher and a department can be associated but exist independently.
+
+
+8. What is it called where child object gets killed if parent object is killed?
+a) Aggregation
+b) Composition
+c) Encapsulation
+d) Association
+Answer: b
+Explanation: Composition occurs when child object gets killed if parent object gets killed. Aggregation is also known as strong Aggregation.
+
+
+9. What is it called where object has its own lifecycle and child object cannot belong to another parent object?
+a) Aggregation
+b) Composition
+c) Encapsulation
+d) Association
+Answer: a
+Explanation: Aggregation occurs when objects have their own life cycle and child object can associate with only one parent object.
+
+
+10. Method overriding is combination of inheritance and polymorphism?
+a) True
+b) false
+Answer: a
+Explanation: In order for method overriding, method with same signature in both superclass and subclass is required with same signature. That satisfies both concepts inheritance and polymorphism.
+
+JDK , JVM , JIT ,JRE
+
+1. Which component is used to compile, debug and execute java program?
+a) JVM
+b) JDK
+c) JIT
+d) JRE
+Answer: b
+Explanation: JDK is a core component of Java Environment and provides all the tools, executables and binaries required to compile, debug and execute a Java Program.
+
+
+2. Which component is responsible for interpreting bytecode into machine specific code?
+a) JVM
+b) JDK
+c) JIT
+d) JRE
+Answer: a
+Explanation: JVM (Java Virtual Machine) is responsible for interpreting bytecode into machine-specific code. It executes the bytecode and manages memory, security, and platform independence.
+
+
+3. Which component is responsible to run java program?
+a) JVM
+b) JDK
+c) JIT
+d) JRE
+Answer: d
+Explanation: JRE is the implementation of JVM, it provides platform to execute java programs.
+
+4. Which component is responsible to optimize bytecode to machine code?
+a) JVM
+b) JDK
+c) JIT
+d) JRE
+Answer: c
+Explanation: JIT optimizes bytecode to machine specific language code by compiling similar bytecodes at the same time. This reduces overall time taken for compilation of bytecode to machine specific language.
+
+
+5. Which statement is true about java?
+a) Platform independent programming language
+b) Platform dependent programming language
+c) Code dependent programming language
+d) Sequence dependent programming language
+Answer: a
+Explanation: Java is called ‘Platform Independent Language’ as it primarily works on the principle of ‘compile once, run everywhere’.
+
+
+6. Which of the below is invalid identifier with the main method?
+a) public
+b) static
+c) private
+d) final
+Answer: c
+Explanation: main method cannot be private as it is invoked by external method. Other identifier are valid with main method.
+
+
+7. What is the extension of java code files?
+a) .class
+b) .java
+c) .txt
+d) .js
+Answer: b
+Explanation: Java files have .java extension.
+
+
+8. What is the extension of compiled java classes?
+a) .class
+b) .java
+c) .txt
+d) .js
+Answer: a
+Explanation: The compiled java files have .class extension.
+
+
+9. How can we identify whether a compilation unit is class or interface from a .class file?
+a) Java source file header
+b) Extension of compilation unit
+c) We cannot differentiate between class and interface
+d) The class or interface name should be postfixed with unit type
+Answer: a
+Explanation: The Java source file contains a header that declares the type of class or interface, its visibility with respect to other classes, its name and any superclass it may extend, or interface it implements.
+
+
+10. What is use of interpreter?
+a) They convert bytecode to machine language code
+b) They read high level code and execute them
+c) They are intermediated between JIT and JVM
+d) It is a synonym for JIT
+Answer: b
+Explanation: Interpreters read high level language (interprets it) and execute the program. Interpreters are normally not passing through byte-code and jit compilation.
