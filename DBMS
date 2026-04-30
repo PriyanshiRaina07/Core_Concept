@@ -908,6 +908,609 @@ d) Conceptual view
 Ans. d
 Explanation: The conceptual view (also called the logical view) is referred to as the total view of a database. It represents the complete logical structure of the entire database — what data is stored and the relationships among that data — hiding the physical storage details while showing all entities, attributes, and relationships.
 
+91. Which of the following is used to define the structure of a relation?
+a) DML
+b) DDL
+c) DCL
+d) TCL
+
+Ans. b
+Explanation: DDL (Data Definition Language) is used to define the structure of a relation/table. It includes commands like CREATE, ALTER, DROP, and TRUNCATE that define or modify the schema of database objects.
+
+92. Which of the following is a type of database?
+a) Hierarchical database
+b) Network database
+c) Relational database
+d) All of the above
+
+Ans. d
+Explanation: All three — Hierarchical, Network, and Relational — are valid types of databases. Hierarchical uses a tree structure, Network uses a graph structure, and Relational uses tables. Other types include Object-oriented, NoSQL, and Cloud databases.
+
+93. What is the purpose of the HAVING clause in SQL?
+a) To filter rows before grouping
+b) To filter groups after GROUP BY
+c) To sort the result set
+d) To join two tables
+
+Ans. b
+Explanation: The HAVING clause is used to filter groups after the GROUP BY operation. It is similar to the WHERE clause, but WHERE filters individual rows before grouping, while HAVING filters groups after aggregation. For example, HAVING COUNT(*) > 5 returns only groups with more than 5 records.
+
+94. Which of the following is a lossless join decomposition?
+a) A decomposition where data is lost after joining
+b) A decomposition where the original relation can be reconstructed by joining the decomposed relations
+c) A decomposition that increases redundancy
+d) A decomposition that violates normalization
+
+Ans. b
+Explanation: A lossless join decomposition ensures that the original relation can be perfectly reconstructed by joining the decomposed relations without any loss of information or generation of spurious tuples. It is an essential property of good database decomposition during normalization.
+
+95. What is a deadlock in DBMS?
+a) A situation where a transaction waits indefinitely for a resource held by another transaction
+b) A type of database index
+c) A method of data backup
+d) A type of SQL constraint
+
+Ans. a
+Explanation: A deadlock occurs when two or more transactions wait indefinitely for resources held by each other, creating a circular wait condition. For example, Transaction T1 holds Resource A and waits for Resource B, while Transaction T2 holds Resource B and waits for Resource A.
+
+96. Which of the following is used to prevent deadlock in DBMS?
+a) Two-phase locking
+b) Timestamp ordering
+c) Wait-die scheme
+d) All of the above
+
+Ans. d
+Explanation: All three — Two-phase locking, Timestamp ordering, and Wait-die scheme — are used to prevent or handle deadlocks in DBMS. Two-phase locking ensures serializability, timestamp ordering uses timestamps to order transactions, and Wait-die scheme uses priorities to decide which transaction should wait or be rolled back.
+
+97. What is the difference between DELETE and TRUNCATE in SQL?
+a) Both are identical commands
+b) DELETE removes specific rows and can be rolled back; TRUNCATE removes all rows and cannot be rolled back
+c) TRUNCATE removes specific rows; DELETE removes all rows
+d) DELETE is a DDL command; TRUNCATE is a DML command
+
+Ans. b
+Explanation: DELETE is a DML command that removes specific rows based on a WHERE condition and can be rolled back using ROLLBACK. TRUNCATE is a DDL command that removes all rows from a table at once, cannot be rolled back (in most databases), and resets identity columns. TRUNCATE is faster than DELETE for removing all rows.
+
+98. What is a composite key?
+a) A key that consists of a single attribute
+b) A key made up of two or more attributes to uniquely identify a tuple
+c) A key that references another table
+d) A key that allows NULL values
+
+Ans. b
+Explanation: A Composite Key is a key that consists of two or more attributes (columns) that together uniquely identify a tuple in a relation. No single attribute alone can uniquely identify the row. For example, in an ORDER_ITEM table, (order_id, product_id) together might form a composite key.
+
+99. Which of the following is true about a candidate key?
+a) A table can have only one candidate key
+b) A candidate key can have NULL values
+c) A table can have multiple candidate keys
+d) A candidate key is always a foreign key
+
+Ans. c
+Explanation: A table can have multiple candidate keys. Each candidate key is a minimal super key that can uniquely identify a tuple. One candidate key is selected as the primary key, and the remaining ones are called alternate keys. Candidate keys cannot have NULL values.
+
+100. What is a surrogate key in a database?
+a) A natural key derived from data
+b) A system-generated artificial key used as a primary key
+c) A key used to join two tables
+d) A composite key with multiple attributes
+
+Ans. b
+Explanation: A Surrogate Key is a system-generated artificial key (usually an auto-incremented integer) used as a primary key. It has no business meaning and is created purely for database purposes. Examples include auto-increment IDs like employee_id = 1, 2, 3... It is preferred when no natural key exists or when natural keys are too complex.
+
+
+101. What is the purpose of the GROUP BY clause in SQL?
+a) To filter rows from a table
+b) To sort the result set
+c) To group rows with the same values in specified columns for aggregation
+d) To join multiple tables
+
+Ans. c
+Explanation: The GROUP BY clause groups rows that have the same values in specified columns into summary rows. It is typically used with aggregate functions like COUNT, SUM, AVG, MAX, and MIN. For example, GROUP BY department groups employees by their department so that aggregate functions can be applied to each group.
+
+
+102. What is a non-correlated subquery?
+a) A subquery that depends on the outer query for its values
+b) A subquery that is independent of the outer query and executes only once
+c) A subquery that joins two tables
+d) A subquery that uses aggregate functions
+
+Ans. b
+Explanation: A non-correlated subquery is independent of the outer query and executes only once. Its result is then used by the outer query. In contrast, a correlated subquery depends on the outer query and executes once for each row processed by the outer query, making it generally slower.
+
+
+103. What is the purpose of the DISTINCT keyword in SQL?
+a) To sort the result set
+b) To filter NULL values
+c) To remove duplicate rows from the result set
+d) To count the number of rows
+
+Ans. c
+Explanation: The DISTINCT keyword in SQL is used to remove duplicate rows from the result set. For example, SELECT DISTINCT department FROM employees returns each department name only once, even if multiple employees belong to the same department. Without DISTINCT, duplicate values would appear in the output.
+
+
+104. Which of the following is an example of a DML command?
+a) CREATE
+b) DROP
+c) INSERT
+d) GRANT
+
+Ans. c
+Explanation: INSERT is a DML (Data Manipulation Language) command used to insert new rows into a table. Other DML commands include SELECT, UPDATE, and DELETE. CREATE and DROP are DDL commands, while GRANT is a DCL (Data Control Language) command.
+
+
+105. What is an index in a database?
+a) A constraint that enforces uniqueness
+b) A data structure that improves the speed of data retrieval
+c) A type of SQL join
+d) A method of database normalization
+
+Ans. b
+Explanation: An index is a data structure (usually a B-tree or hash) that improves the speed of data retrieval operations on a database table. It works similar to a book index — instead of scanning the entire table, the database uses the index to quickly locate the required data. However, indexes consume additional storage space and slow down write operations.
+
+
+106. What is a clustered index?
+a) An index that stores data in a separate structure from the table
+b) An index that physically reorders the data in the table based on the indexed column
+c) An index that allows multiple NULL values
+d) An index used only for foreign keys
+
+Ans. b
+Explanation: A Clustered Index physically reorders the data rows in the table based on the indexed column's values. A table can have only one clustered index because the data can only be physically sorted in one order. The primary key of a table is typically the clustered index by default.
+
+
+107. What is a non-clustered index?
+a) An index that physically reorders table data
+b) A separate structure that holds the index key and a pointer to the actual data row
+c) An index that cannot be used with foreign keys
+d) An index that only supports unique values
+
+Ans. b
+Explanation: A Non-Clustered Index is a separate structure from the table data that holds the index key values and pointers (row locators) to the actual data rows. Unlike clustered indexes, they do not physically reorder the data. A table can have multiple non-clustered indexes.
+
+
+108. What is a stored procedure in SQL?
+a) A virtual table in a database
+b) A precompiled set of SQL statements stored in the database that can be executed repeatedly
+c) A type of database constraint
+d) A method of database backup
+
+Ans. b
+Explanation: A Stored Procedure is a precompiled set of one or more SQL statements stored in the database under a name and processed as a unit. It can accept input parameters, perform operations, and return output. Benefits include improved performance (precompiled), code reusability, reduced network traffic, and enhanced security.
+
+
+109. What is a trigger in SQL?
+a) A type of stored procedure that automatically executes in response to a specific database event
+b) A type of SQL join
+c) A constraint used for referential integrity
+d) A type of database index
+
+Ans. a
+Explanation: A Trigger is a special type of stored procedure that automatically executes (fires) in response to specific events on a table or view, such as INSERT, UPDATE, or DELETE operations. Triggers are used to enforce business rules, maintain audit trails, and ensure data integrity automatically.
+
+
+110.What is a cursor in SQL?
+a) A database constraint
+b) A database object used to retrieve and process rows from a result set one at a time
+c) A type of stored procedure
+d) A method of database normalization
+
+Ans. b
+Explanation: A Cursor in SQL is a database object that allows retrieval and processing of rows from a result set one row at a time. It is used when row-by-row processing is required. Cursors have a performance overhead compared to set-based operations and should be used only when necessary.
+
+
+111. Which of the following is true about the BCNF (Boyce-Codd Normal Form)?
+a) It is a weaker version of 3NF
+b) It is a stronger version of 3NF where every determinant must be a superkey
+c) It deals only with multivalued dependencies
+d) It only applies to relations with composite keys
+
+Ans. b
+Explanation: BCNF (Boyce-Codd Normal Form) is a stronger version of 3NF. A relation is in BCNF if for every non-trivial functional dependency X→Y, X must be a superkey. While 3NF allows non-superkey determinants if the dependent is a prime attribute, BCNF does not allow any such exception.
+
+
+112. What is a functional dependency in DBMS?
+a) A relationship between two tables
+b) A constraint where the value of one attribute determines the value of another attribute
+c) A type of SQL join
+d) A method of database indexing
+
+Ans. b
+Explanation: A Functional Dependency (FD) is a constraint that describes a relationship between attributes in a relation. If attribute X functionally determines attribute Y (written as X→Y), it means for any two tuples with the same value of X, they must have the same value of Y. For example, employee_id → employee_name.
+
+
+113. What is a partial dependency in DBMS?
+a) A dependency where a non-prime attribute depends on the entire primary key
+b) A dependency where a non-prime attribute depends on only a part of a composite primary key
+c) A dependency where a prime attribute depends on a non-prime attribute
+d) A dependency between two non-prime attributes
+
+Ans. b
+Explanation: A Partial Dependency occurs when a non-prime attribute (not part of any candidate key) depends on only a part of a composite primary key, rather than the whole key. Partial dependencies violate Second Normal Form (2NF). To eliminate partial dependencies, the relation must be decomposed into 2NF.
+114. What is a transitive dependency in DBMS?
+a) A dependency where attribute A depends on attribute B, and attribute B depends on attribute C, so A transitively depends on C
+b) A dependency between a primary key and a foreign key
+c) A dependency where all attributes depend on the entire primary key
+d) A dependency specific to multivalued attributes
+
+Ans. a
+Explanation: A Transitive Dependency occurs when a non-prime attribute A depends on another non-prime attribute B (i.e., A→B and B→C, so A transitively depends on C through B). Transitive dependencies violate Third Normal Form (3NF). For example, if employee_id→department_id and department_id→department_name, then department_name is transitively dependent on employee_id.
+
+
+115. Which of the following is the correct order of normalization?
+a) 1NF → 3NF → 2NF → BCNF → 4NF
+b) 1NF → 2NF → 3NF → BCNF → 4NF
+c) 2NF → 1NF → BCNF → 3NF → 4NF
+d) BCNF → 3NF → 2NF → 1NF → 4NF
+
+Ans. b
+Explanation: The correct order of normalization is 1NF → 2NF → 3NF → BCNF → 4NF → 5NF. Each higher normal form builds upon the previous one. 1NF eliminates repeating groups, 2NF eliminates partial dependencies, 3NF eliminates transitive dependencies, BCNF strengthens 3NF, and 4NF eliminates multivalued dependencies.
+
+
+116. What is a shadow copy in DBMS?
+a) A technique used for transaction recovery by maintaining a copy of the database
+b) A type of database index
+c) A method of query optimization
+d) A type of SQL join
+
+Ans. a
+Explanation: Shadow Copy is a simple recovery technique used in DBMS where a copy (shadow) of the database is maintained before a transaction begins. If the transaction fails, the database is restored from the shadow copy. While simple to implement, it is not efficient for large databases.
+
+
+117. What is the two-phase locking protocol (2PL)?
+a) A protocol that allows transactions to acquire and release locks at any time
+b) A concurrency control protocol where a transaction has a growing phase (acquires locks) and a shrinking phase (releases locks)
+c) A protocol used only for read operations
+d) A deadlock prevention technique that uses timestamps
+
+Ans. b
+Explanation: Two-Phase Locking (2PL) is a concurrency control protocol that ensures serializability. It has two phases: Growing phase (transaction can acquire locks but not release any) and Shrinking phase (transaction can release locks but not acquire any). Once a transaction releases its first lock, it enters the shrinking phase and cannot acquire new locks.
+
+
+118. What is the difference between shared lock and exclusive lock?
+a) Both locks allow read and write operations simultaneously
+b) Shared lock allows multiple transactions to read; exclusive lock allows only one transaction to read or write
+c) Shared lock allows write operations; exclusive lock allows only read operations
+d) Both locks prevent all other transactions from accessing the data
+
+Ans. b
+Explanation: A Shared Lock (S-lock) allows multiple transactions to read a data item simultaneously but prevents any transaction from writing to it. An Exclusive Lock (X-lock) allows only one transaction to both read and write a data item, preventing all other transactions from accessing it in any mode. Exclusive locks are used for write operations.
+
+
+119. Which of the following is a property of a lossless decomposition?
+a) R1 ∪ R2 = R
+b) R1 ∩ R2 = R
+c) R1 ∩ R2 → R1 or R1 ∩ R2 → R2
+d) Both A and C
+
+Ans. d
+Explanation: For a decomposition of relation R into R1 and R2 to be lossless, two conditions must hold: (1) R1 ∪ R2 = R (all attributes are preserved), and (2) R1 ∩ R2 → R1 or R1 ∩ R2 → R2 (the common attributes must be a superkey of at least one of the decomposed relations). This ensures the original relation can be reconstructed without spurious tuples.
+
+
+120. What is a checkpoint in DBMS?
+a) A point in time where all modified data in memory is written to disk and a log record is created
+b) A type of database index
+c) A method of query optimization
+d) A type of SQL constraint
+
+Ans. a
+Explanation: A Checkpoint is a mechanism in DBMS where all modified (dirty) pages in the buffer are written to disk and a checkpoint record is written to the log. It is used to reduce recovery time after a system failure. During recovery, only transactions that were active after the last checkpoint need to be redone or undone.
+
+121. What is a data dictionary in DBMS?
+a) A physical storage of database records
+b) A repository that stores metadata about the database structure, objects, and constraints
+c) A type of SQL command
+d) A method of database backup
+
+Ans. b
+
+
+122. Explanation: A Data Dictionary (also called system catalog or metadata repository) stores metadata — data about the data — including information about tables, columns, data types, constraints, indexes, users, and privileges. It is used by the DBMS itself to manage the database and is consulted during query processing and optimization.
+What is query optimization in DBMS?
+a) The process of writing SQL queries efficiently by the programmer
+b) The process by which the DBMS selects the most efficient execution plan for a query
+c) A method of database normalization
+d) A technique for database backup
+
+Ans. b
+Explanation: Query Optimization is the process by which the DBMS's query optimizer selects the most efficient execution plan for a given SQL query from multiple possible plans. It considers factors like available indexes, table sizes, join methods, and access paths to minimize query execution time and resource usage.
+
+
+123. What is the difference between UNION and UNION ALL in SQL?
+a) UNION includes duplicates; UNION ALL removes duplicates
+b) UNION removes duplicates; UNION ALL includes all rows including duplicates
+c) Both are identical operations
+d) UNION is used for tables; UNION ALL is used for views
+
+Ans. b
+Explanation: UNION combines the results of two SELECT statements and removes duplicate rows from the final result. UNION ALL combines the results of two SELECT statements and includes all rows, even duplicates. UNION ALL is faster than UNION because it skips the deduplication step.
+
+
+124. What is a materialized view?
+a) A virtual table that does not store data physically
+b) A view that stores the query result physically on disk and is periodically refreshed
+c) A type of SQL join
+d) A method of database normalization
+
+Ans. b
+Explanation: A Materialized View is a database object that stores the result of a query physically on disk, unlike a regular view which is just a stored query. It improves query performance by precomputing and storing complex join or aggregation results. It needs to be periodically refreshed to reflect changes in the underlying base tables.
+
+
+125. What is the purpose of the EXPLAIN command in SQL?
+a) To execute a query and return results
+b) To display the execution plan of a query without actually running it
+c) To create an index on a table
+d) To optimize a stored procedure
+
+Ans. b
+Explanation: The EXPLAIN command (or EXPLAIN PLAN in some databases) displays the execution plan that the query optimizer has chosen for a SQL query without actually executing it. It shows details like the join methods, index usage, table scan operations, and estimated costs, helping developers identify performance bottlenecks and optimize queries.
+
+
+126. Which of the following is true about NULL values in SQL?
+a) NULL is equal to zero
+b) NULL is equal to an empty string
+c) NULL represents an unknown or missing value and is not equal to anything, including itself
+d) NULL values are always ignored in all SQL operations
+
+Ans. c
+Explanation: NULL in SQL represents an unknown, missing, or inapplicable value. It is not equal to zero, empty string, or even another NULL. Comparisons with NULL using = always return UNKNOWN (not TRUE or FALSE). To check for NULL values, you must use IS NULL or IS NOT NULL operators. Aggregate functions like SUM and COUNT ignore NULL values.
+
+
+127. What is referential integrity in DBMS?
+a) A constraint ensuring that every primary key value is unique
+b) A constraint ensuring that a foreign key value must match an existing primary key value in the referenced table or be NULL
+c) A constraint ensuring that all column values are of the correct data type
+d) A constraint preventing duplicate rows in a table
+
+Ans. b
+Explanation: Referential Integrity is a database constraint that ensures every foreign key value in a table either matches an existing primary key value in the referenced table or is NULL. It maintains consistency between related tables and prevents orphan records. Violations can occur during INSERT, UPDATE, or DELETE operations.
+
+
+128. What is denormalization in DBMS?
+a) The process of organizing data to reduce redundancy
+b) The process of intentionally introducing redundancy into a database to improve read performance
+c) The process of converting a database from one normal form to a lower one forcibly
+d) A type of database backup technique
+
+Ans. b
+Explanation: Denormalization is the process of intentionally introducing redundancy into a normalized database to improve read query performance. By combining tables, adding redundant columns, or storing precomputed values, it reduces the number of joins required. It trades storage space and write performance for faster read operations, commonly used in data warehouses and reporting systems.
+
+
+129. What is the purpose of the COALESCE function in SQL?
+a) To count the number of non-NULL values in a column
+b) To return the first non-NULL value from a list of expressions
+c) To convert NULL values to zero
+d) To merge two tables together
+
+Ans. b
+Explanation: The COALESCE function in SQL returns the first non-NULL value from a list of expressions. For example, COALESCE(NULL, NULL, 5, 10) returns 5 because it is the first non-NULL value. It is commonly used to handle NULL values by providing a default value when a column contains NULL.
+
+
+130. What is an Entity-Relationship (ER) model?
+a) A physical representation of database storage
+b) A high-level conceptual data model that describes data and relationships between data in the real world
+c) A type of SQL query
+d) A method of database indexing
+
+Ans. b
+Explanation: An Entity-Relationship (ER) model is a high-level conceptual data model used to describe the data and the relationships between data in the real world. It uses entities (rectangles), attributes (ellipses), and relationships (diamonds) to visually represent the logical structure of a database before implementation.
+
+131. What is a weak entity in an ER diagram?
+a) An entity with a primary key
+b) An entity that cannot be uniquely identified by its own attributes alone and depends on a strong entity
+c) An entity with no attributes
+d) An entity that has multiple relationships
+
+Ans. b
+
+
+132. Explanation: A Weak Entity is an entity that cannot be uniquely identified by its own attributes alone. It depends on a strong (identifying) entity for its existence and identification. It is represented by a double rectangle in ER diagrams. For example, a DEPENDENT entity depends on the EMPLOYEE entity. Its partial key combined with the parent's primary key forms its unique identifier.
+What is a participation constraint in ER modeling?
+a) A constraint that limits the number of attributes an entity can have
+b) A constraint that specifies whether all or only some entity instances participate in a relationship
+c) A constraint that prevents duplicate entities
+d) A constraint that defines key attributes
+
+Ans. b
+Explanation: Participation Constraint specifies whether the existence of an entity depends on its being related to another entity through a relationship. Total Participation (double line) means every instance of the entity must participate in the relationship. Partial Participation (single line) means some instances may not participate. For example, every EMPLOYEE must work in a DEPARTMENT (total participation).
+
+
+133. What is object-relational mapping (ORM)?
+a) A method of database normalization
+b) A technique that converts data between incompatible type systems in object-oriented programming languages and relational databases
+c) A type of SQL join used for object databases
+d) A method of database indexing for object types
+
+Ans. b
+Explanation: Object-Relational Mapping (ORM) is a programming technique that converts data between incompatible type systems — specifically between object-oriented programming languages and relational databases. It allows developers to interact with the database using objects instead of writing raw SQL. Popular ORM tools include Hibernate (Java), SQLAlchemy (Python), and Entity Framework (.NET).
+
+
+134. What is a database transaction log?
+a) A record of all user login activities in the database
+b) A file that records all changes made to the database, used for recovery and auditing
+c) A type of database index
+d) A method of query optimization
+
+Ans. b
+Explanation: A Transaction Log (or redo log) is a file that sequentially records all changes (INSERT, UPDATE, DELETE) made to the database, along with before and after images of modified data. It is essential for database recovery after failures (crash recovery), point-in-time recovery, and replication. The log ensures durability and atomicity of transactions.
+
+
+135. What is the difference between optimistic and pessimistic concurrency control?
+a) Optimistic assumes conflicts are rare and checks for conflicts only at commit time; pessimistic assumes conflicts are frequent and locks data before accessing it
+b) Optimistic locks data before access; pessimistic checks for conflicts only at commit time
+c) Both use the same locking mechanism with different names
+d) Optimistic is used for read operations only; pessimistic is used for write operations only
+
+Ans. a
+Explanation: Optimistic Concurrency Control assumes conflicts between transactions are rare. Transactions proceed without locking and check for conflicts only at commit time. If a conflict is detected, the transaction is rolled back. Pessimistic Concurrency Control assumes conflicts are frequent and locks data items before accessing them, preventing other transactions from accessing locked data until the lock is released.
+
+
+136. What is a B+ tree index?
+a) A binary search tree used for indexing
+b) A balanced tree where all data records are stored at leaf nodes and leaf nodes are linked for efficient range queries
+c) A hash-based index structure
+d) A type of clustered index only
+
+Ans. b
+Explanation: A B+ Tree is an extension of a B-tree where all actual data records (or pointers to them) are stored only at leaf nodes, and internal nodes store only keys for navigation. All leaf nodes are linked together as a linked list, making range queries highly efficient. B+ trees are the most widely used index structure in relational databases like MySQL and PostgreSQL.
+
+
+137. What is RAID in the context of database storage?
+a) A type of SQL command for data replication
+b) Redundant Array of Independent Disks — a technology that combines multiple disks to improve performance and/or fault tolerance
+c) A database normalization technique
+d) A method of query optimization
+
+Ans. b
+Explanation: RAID (Redundant Array of Independent Disks) is a storage technology that combines multiple physical disks into one logical unit to improve performance, increase storage capacity, and/or provide fault tolerance through redundancy. Different RAID levels (RAID 0, 1, 5, 6, 10) offer different trade-offs between performance, capacity, and fault tolerance. It is important in database systems for ensuring data availability and reliability.
+
+
+138. What is a hash index in DBMS?
+a) An index based on a tree structure
+b) An index that uses a hash function to map search key values to bucket addresses for fast equality lookups
+c) An index used only for primary keys
+d) An index that stores data in sorted order
+
+Ans. b
+Explanation: A Hash Index uses a hash function to map search key values to bucket addresses, enabling very fast equality lookups (O(1) average time complexity). It is ideal for equality comparisons (=) but does not support range queries efficiently. Hash indexes are commonly used in in-memory databases and hash join operations.
+
+
+139. What is serializability in DBMS?
+a) A property ensuring transactions are executed in a fixed sequential order
+b) A property ensuring that the concurrent execution of transactions produces the same result as some serial execution of those transactions
+c) A property ensuring all transactions are committed in order
+d) A property ensuring no two transactions can run simultaneously
+
+Ans. b
+Explanation: Serializability is a correctness criterion for concurrent transaction execution. A schedule is serializable if its outcome (effect on the database) is equivalent to some serial execution of the same transactions. It ensures database consistency in a concurrent environment without actually executing transactions serially, thereby maintaining both correctness and performance.
+
+
+140. What is the difference between a primary index and a secondary index?
+a) Primary index is built on a non-ordering field; secondary index is built on the ordering field
+b) Primary index is built on the ordering key field of a sequentially ordered file; secondary index is built on a non-ordering field
+c) Both are identical and can be used interchangeably
+d) Primary index allows duplicates; secondary index does not
+
+Ans. b
+Explanation: A Primary Index is created on the ordering key field of a sequentially ordered (sorted) data file and has one index entry per disk block. A Secondary Index is created on a non-ordering field (or a non-key field) of the data file to provide an alternative access path. A table can have only one primary index but multiple secondary indexes.
+
+141. What is a correlated subquery in SQL?
+a) A subquery that executes independently of the outer query
+b) A subquery that references columns from the outer query and executes once for each row processed by the outer query
+c) A subquery that uses aggregate functions
+d) A subquery that joins two or more tables
+
+Ans. b
+Explanation: A Correlated Subquery is a subquery that references one or more columns from the outer query. Unlike a non-correlated subquery that executes only once, a correlated subquery executes once for each row processed by the outer query, making it generally slower. For example, finding employees whose salary is greater than the average salary of their own department requires a correlated subquery that references the department of the current outer query row.
+
+
+142. What is the difference between UNION and JOIN in SQL?
+a) UNION combines rows from two tables horizontally; JOIN combines rows vertically
+b) UNION combines result sets of two queries vertically (adding rows); JOIN combines columns from two tables horizontally based on a related column
+c) Both UNION and JOIN perform identical operations
+d) UNION is used for the same table; JOIN is used for different tables only
+
+Ans. b
+Explanation: UNION combines the result sets of two or more SELECT queries vertically by stacking rows on top of each other. Both queries must have the same number of columns with compatible data types. It removes duplicates by default (use UNION ALL to keep duplicates). JOIN combines columns from two or more tables horizontally based on a related column (join condition), creating wider rows with data from multiple tables. UNION increases the number of rows; JOIN increases the number of columns.
+
+143. What is the difference between a view and a materialized view?
+a) A view stores data physically; a materialized view does not store data
+b) A view is a virtual table that executes its query each time it is accessed; a materialized view physically stores the query result and is periodically refreshed
+c) Both views and materialized views store data physically
+d) A view is used for OLAP systems; a materialized view is used for OLTP systems
+
+Ans. b
+Explanation: A regular View is a virtual table that does not store data physically. Every time the view is queried, the underlying SQL query is executed against the base tables, so it always returns up-to-date data. A Materialized View physically stores the result of the query on disk, similar to a cached copy. It offers much faster query performance since data is precomputed, but it may return slightly stale data until it is refreshed. Materialized views are commonly used in data warehouses and reporting systems for performance optimization.
+
+144. What is the difference between a primary key and a unique key?
+a) Primary key allows NULL values; unique key does not allow NULL values
+b) Primary key does not allow NULL values and only one primary key per table; unique key allows one NULL value and multiple unique keys can exist per table
+c) Both primary key and unique key are identical constraints
+d) Primary key is used for foreign key references only; unique key is used for data integrity only
+
+Ans. b
+Explanation: A Primary Key uniquely identifies each row in a table, does not allow NULL values, and only one primary key can exist per table. It creates a clustered index by default. A Unique Key also enforces uniqueness of column values but allows one NULL value (in most databases) and multiple unique keys can exist in a single table. It creates a non-clustered index by default. Both can be referenced by foreign keys in other tables.
+
+145. What is the difference between a clustered and non-clustered index in terms of performance?
+a) Clustered index is always slower than non-clustered index
+b) Clustered index is faster for range queries and sequential access since data is physically sorted; non-clustered index is faster for specific column lookups but requires an extra lookup step to retrieve full row data
+c) Both clustered and non-clustered indexes have identical performance characteristics
+d) Non-clustered index is faster for all types of queries compared to clustered index
+
+Ans. b
+Explanation: A Clustered Index physically sorts and stores data rows in the table based on the index key. It is very fast for range queries (BETWEEN, >, <) and sequential access since related data is physically adjacent on disk. A table can have only one clustered index. A Non-Clustered Index stores the index key and a pointer (row locator) to the actual data row in a separate structure. It requires an extra lookup step (key lookup or bookmark lookup) to retrieve the full row data after finding the index entry. It is efficient for specific equality lookups on non-primary key columns. Multiple non-clustered indexes can exist on a single table.
+
+146. What is the difference between a natural join and an equi join?
+a) Natural join requires explicit join condition; equi join automatically joins on all common columns
+b) Natural join automatically joins on all columns with the same name and eliminates duplicate columns; equi join requires an explicit equality condition and may retain duplicate columns
+c) Both natural join and equi join are identical operations
+d) Natural join is used for three or more tables; equi join is used for two tables only
+
+Ans. b
+Explanation: A Natural Join automatically joins two tables on all columns that have the same name and compatible data types, and eliminates the duplicate columns from the result. It requires no explicit join condition. An Equi Join requires an explicit equality condition in the ON or WHERE clause (e.g., table1.id = table2.id) and retains both join columns in the result even if they have the same name. Natural join is cleaner but can be unpredictable if column names change; equi join is more explicit and controllable.
+
+147. What is the purpose of the ROWNUM and ROW_NUMBER() in SQL?
+a) ROWNUM and ROW_NUMBER() are identical functions
+b) ROWNUM is a pseudocolumn in Oracle that assigns sequential numbers before sorting; ROW_NUMBER() is a window function that assigns sequential numbers after sorting within a partition
+c) ROWNUM is used for pagination only; ROW_NUMBER() is used for ranking only
+d) Both are used exclusively for deleting duplicate rows
+
+Ans. b
+Explanation: ROWNUM is a pseudocolumn in Oracle that assigns sequential row numbers to rows as they are retrieved from the database, before any ORDER BY sorting is applied. This can lead to unexpected results if not used carefully with subqueries. ROW_NUMBER() is an ANSI standard window function that assigns a unique sequential integer to each row within a result set or partition, after the ORDER BY clause is applied. ROW_NUMBER() is more predictable and flexible, supporting pagination, ranking, and duplicate detection across all major databases.
+
+148. What is the difference between optimistic locking and pessimistic locking?
+a) Optimistic locking locks data before reading; pessimistic locking locks data only at commit time
+b) Optimistic locking assumes conflicts are rare, does not lock data during transaction, and checks for conflicts only at commit time; pessimistic locking assumes conflicts are frequent and locks data immediately when it is read to prevent other transactions from modifying it
+c) Both optimistic and pessimistic locking use identical mechanisms
+d) Optimistic locking is used only for read operations; pessimistic locking is used only for write operations
+
+Ans. b
+Explanation: Optimistic Locking assumes that conflicts between concurrent transactions are rare. It does not lock the data during the transaction. Instead, it checks at commit time whether the data has been modified by another transaction since it was read (usually using a version number or timestamp). If a conflict is detected, the transaction is rolled back and retried. It is best suited for low-contention environments. Pessimistic Locking assumes conflicts are frequent and immediately locks data when it is read, preventing other transactions from modifying it until the lock is released. It is suited for high-contention environments but reduces concurrency.
+
+149. What is the difference between SAVEPOINT and ROLLBACK in SQL transactions?
+a) SAVEPOINT permanently saves transaction changes; ROLLBACK temporarily saves changes
+b) SAVEPOINT sets a named point within a transaction to which partial rollback is possible; ROLLBACK undoes all changes either to the beginning of the transaction or to a specified savepoint
+c) Both SAVEPOINT and ROLLBACK perform identical operations
+d) SAVEPOINT is used to commit partial transactions; ROLLBACK is used to undo committed transactions
+
+Ans. b
+Explanation: A SAVEPOINT sets a named marker within a transaction that allows partial rollback to that specific point without undoing the entire transaction. For example, SAVEPOINT sp1 marks a point in the transaction. ROLLBACK undoes transaction changes — ROLLBACK TO sp1 undoes only the changes made after savepoint sp1 while keeping earlier changes, while a plain ROLLBACK (without specifying a savepoint) undoes all changes made since the transaction began. Savepoints are useful for complex transactions where only a portion needs to be undone on error.
+
+
+150. What is the difference between a hash join and a nested loop join?
+a) Hash join is always faster than nested loop join for all cases
+b) Hash join builds a hash table on the smaller table and probes it with the larger table, efficient for large unsorted datasets; nested loop join iterates each row of the outer table against all rows of the inner table, efficient for small datasets or when the inner table has an index
+c) Both hash join and nested loop join use identical algorithms
+d) Hash join is used only for equality conditions; nested loop join is used only for non-equality conditions
+
+Ans. b
+Explanation: A Hash Join works by building a hash table on the smaller (build) table using the join key, then scanning the larger (probe) table and looking up matching rows in the hash table. It is highly efficient for large, unsorted datasets and equality joins but requires significant memory. A Nested Loop Join iterates over each row of the outer table and for each row, scans the entire inner table (or uses an index) to find matching rows. It is efficient for small datasets, when the inner table has an index on the join key, or for non-equality join conditions. The query optimizer chooses the appropriate join method based on table sizes, indexes, and available memory.
+
+
+151. What is the difference between an implicit and explicit transaction in SQL?
+a) Implicit transactions are manually started by the user; explicit transactions are automatically managed by the DBMS
+b) Implicit transactions are automatically started and committed by the DBMS for each SQL statement; explicit transactions are manually controlled by the user using BEGIN TRANSACTION, COMMIT, and ROLLBACK statements
+c) Both implicit and explicit transactions use identical control mechanisms
+d) Implicit transactions support savepoints; explicit transactions do not support savepoints
+
+Ans. b
+Explanation: An Implicit Transaction is automatically started and committed by the DBMS for each individual SQL statement. Every DML statement (INSERT, UPDATE, DELETE) is automatically wrapped in its own transaction and committed immediately upon successful execution. An Explicit Transaction is manually controlled by the user who explicitly starts the transaction with BEGIN TRANSACTION (or BEGIN), groups multiple SQL statements together, and explicitly ends it with COMMIT (to save all changes) or ROLLBACK (to undo all changes). Explicit transactions are essential for ensuring atomicity across multiple related SQL statements.
+
+
+152. What is the difference between a full table scan and an index scan in SQL query execution?
+a) Full table scan is always faster than index scan
+b) Full table scan reads every row in the table sequentially; index scan uses an index to quickly locate specific rows, generally faster for selective queries but may be slower for queries returning large portions of the table
+c) Both full table scan and index scan use identical execution strategies
+d) Index scan is always faster than full table scan for all types of queries
+
+
+Ans. b
+Explanation: A Full Table Scan reads every row in the table sequentially from start to end. It is efficient when a query retrieves a large percentage of rows (typically more than 10-20% of the table) or when no suitable index exists. An Index Scan uses an index to quickly locate specific rows matching the search condition without reading the entire table. It is efficient for highly selective queries that retrieve a small percentage of rows. However, for queries returning a large portion of the table, the overhead of index lookups (reading index pages + data pages) can make a full table scan faster. The query optimizer decides which method to use.
+
+
+
+
+
 
 
 
