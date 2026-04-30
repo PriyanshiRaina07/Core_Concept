@@ -725,6 +725,189 @@ FROM instructor;
 Answer: a
 Explanation: The correct syntax is CREATE VIEW view_name AS <query expression>;.
 
+71. Which of the following is the full form of NTFS?
+a) New Tree File System
+b) New Technology File System
+c) New Table File System
+d) Both B and C
+
+Answer: b
+Explanation: NTFS stands for New Technology File System. It is a file system developed by Microsoft for Windows that supports security, permissions, and large file storage.
+
+72. Total view of a database is known as?
+a) Physical view
+b) Internal view
+c) Conceptual view
+d) External view
+
+Answer: c
+Explanation: The conceptual view represents the complete logical structure of the database. It shows what data is stored and the relationships between data.
+
+73. Select the correct command to find the number of values in a column.
+a) ADD
+b) SUM
+c) TOTAL
+d) COUNT
+
+Answer: d
+Explanation: COUNT is used in SQL to count the number of rows or values in a column. It returns the total number of records.
+
+74. Select the correct properties of entities?
+a) Table
+b) Groups
+c) Attributes
+d) Switchboards
+
+Answer: c
+Explanation: Attributes are the properties or characteristics of an entity, such as name, age, or ID in a student entity.
+
+75. Which of the following operator is used to compare a value to a list of literal values?
+a) ANY
+b) BETWEEN
+c) IN
+d) ALL
+
+Answer: c
+Explanation: The IN operator is used to compare a value with a list of values. BETWEEN is used for ranges, not lists.
+
+76. What is the use of COUNT in SQL?
+a) Returns number of distinct value
+b) Returns total values
+c) Returns number of groups
+d) Returns number of columns
+
+Answer: b
+Explanation: COUNT returns the total number of rows or values in a column. It is commonly used to measure the size of data.
+
+77. Select the valid SQL type.
+a) NUMERIC
+b) CHARACTER
+c) FLOAT
+d) All of these
+
+Answer: d
+Explanation: All listed options are valid SQL data types used to store different kinds of data such as numbers, text, and decimal values.
+
+78. The term ‘FAT’ stands for
+a) File allocation tree
+b) File allocation table
+c) File allocation graph
+d) All of these
+
+Answer: b
+Explanation: FAT stands for File Allocation Table. It is a file system used to manage how data is stored and retrieved from storage devices.
+
+79. Which of the following can be used to extract or filter data from a data warehouse?
+a) Data redundancy
+b) Data recovery tool
+c) Data mining
+d) Both B and C
+
+Answer: c
+Explanation: Data mining is used to extract useful patterns and filter relevant information from large datasets in a data warehouse.
+
+80. In case of shutdown before commit, which operation is done automatically?
+a) Commit
+b) Rollback
+c) Savepoint
+d) Checkpoint
+
+Answer: b
+Explanation: If a transaction is not committed and the system shuts down, rollback is performed to undo changes and maintain database consistency.
+
+81. How is an attribute represented in an ER diagram?
+a) Rectangle
+b) Diamond
+c) Ellipse
+d) Circle
+
+Answer: c
+Explanation: In an ER diagram, attributes are represented using an ellipse shape, while entities are rectangles and relationships are diamonds.
+
+82. How many levels are there in the architecture of a database?
+a) Two
+b) Three
+c) Four
+d) Five
+
+Answer: b
+Explanation: A database has three levels of architecture: external level, conceptual level, and internal level. This helps in data abstraction.
+
+83. What is the maximum number of children of a B-tree of order m?
+a) m-1
+b) m+1
+c) 2m
+d) m
+
+Answer: d
+Explanation: In a B-tree of order m, each node can have at most m children and m-1 keys.
+
+84. NATURAL JOIN can be termed as a combination of which operations?
+a) Union and Intersection
+b) Projection and Cartesian product
+c) Selection and Union
+d) Projection and Selection
+
+Answer: b
+Explanation: NATURAL JOIN works by first performing a Cartesian product and then applying projection to remove duplicate columns based on common attributes.
+
+85. Which of the following are relational algebra operations?
+a) Union only
+b) Select only
+c) Rename only
+d) Union, Select, and Rename
+
+Answer: d
+Explanation: Union, Select, and Rename are all relational algebra operations. Relational algebra includes basic operations like Select (σ), Project (π), Union (∪), Set Difference (−), Cartesian Product (×), and Rename (ρ), along with derived operations like Join and Intersection.
+
+
+86. Which command is used to select some particular columns from a table?
+a) Selection
+b) Projection
+c) Restriction
+d) Extraction
+
+Answer: b
+Explanation: Projection (π) is used to select specific columns from a table. It removes unwanted columns and keeps only the required ones. Selection is used for rows, not columns.
+
+87. What is the total view of a database known as?
+a) Physical view
+b) External view
+c) Internal view
+d) Conceptual view
+
+Answer: d
+Explanation: The conceptual view represents the complete logical structure of the database. It includes all entities, attributes, and relationships while hiding physical storage details.
+
+
+88. What is a table joined with itself called?
+a) Cross join
+b) Inner join
+c) Self join
+d) Natural join
+
+Answer: c
+Explanation: A self join is when a table is joined with itself. It is useful for comparing rows within the same table, such as finding employees with the same manager.
+
+
+89. Which of the following can be used to extract or filter data and information from a data warehouse?
+a) Data redundancy
+b) Data recovery tool
+c) Data mining
+d) Both B and C
+
+Answer: c
+Explanation: Data mining is used to extract useful information and patterns from large datasets in a data warehouse. It helps in analysis and decision-making, unlike redundancy or recovery tools.
+
+90. What is the total view of a database known as?
+a) Physical view
+b) External view
+c) Internal view
+d) Conceptual view
+
+Ans. d
+Explanation: The conceptual view (also called the logical view) is referred to as the total view of a database. It represents the complete logical structure of the entire database — what data is stored and the relationships among that data — hiding the physical storage details while showing all entities, attributes, and relationships.
+
 
 
 
