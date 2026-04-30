@@ -578,6 +578,153 @@ Explanation: Value keyword has to be used to insert the values into the table.
 
 -------------------------------------------------------VIEWS---------------------------------------------------------------------------------------
 
+61. Which of the following creates a virtual relation for storing the query?
+a) Function
+b) View
+c) Procedure
+d) None of the mentioned
+
+Answer: b
+Explanation: Any such relation that is not part of the logical model, but is made visible to a user as a virtual relation, is called a view.
+
+62. Which of the following is the syntax for views where v is view name?
+a) Create view v as “query name”;
+b) Create “query expression” as view;
+c) Create view v as “query expression”;
+d) Create view “query expression”;
+
+Answer: c
+Explanation: <query expression> is any legal query expression. The view name is represented by v.
+
+63. SELECT course_id
+FROM physics_fall_2009
+WHERE building= ’Watson’;
+Here the tuples are selected from the view. Which one denotes the view?
+a) Course_id
+b) Watson
+c) Building
+d) physics_fall_2009
+
+Answer: d
+Explanation: In this SQL query, physics_fall_2009 is the name of the view from which tuples are selected. A view in SQL is a virtual table which can be used to access the data in the same way as a table.
+
+64. Materialised views make sure that
+a) View definition is kept stable
+b) View definition is kept up-to-date
+c) View definition is verified for error
+d) View is deleted after specified time
+
+Answer: b
+Explanation: None.
+
+65. Updating the value of the view
+a) Will affect the relation from which it is defined
+b) Will not change the view definition
+c) Will not affect the relation from which it is defined
+d) Cannot determine
+
+Answer: a
+Explanation: None
+
+66. SQL view is said to be updatable (that is, inserts, updates or deletes can be applied on the view) if which of the following conditions are satisfied by the query defining the view?
+a) The from clause has only one database relation
+b) The query does not have a group by or having clause
+c) The select clause contains only attribute names of the relation and does not have any expressions, aggregates, or distinct specification
+d) All of the mentioned
+
+Answer: d
+Explanation: All of the conditions must be satisfied to update the view in sql.
+
+67. Which of the following is used at the end of the view to reject the tuples which do not satisfy the condition in where clause?
+a) With
+b) Check
+c) With check
+d) All of the mentioned
+
+Answer: c
+Explanation: Views can be defined with a with check option clause at the end of the view definition; then, if a tuple inserted into the view does not satisfy the view’s where clause condition, the insertion is rejected by the database system.
+
+68. Consider the two relations instructor and department
+Instructor:
+
+ID	Name	Dept_name	Salary
+1001	Ted	Finance	10000
+1002	Bob	Music	20000
+1003	Ron	Physics	50000
+Department:
+
+Dept_name	Building	Budget
+Biology	Watson	40000
+Chemistry	Painter	30000
+Music	Taylor	50000
+Which of the following SQL statements correctly creates a view combining these two relations so that each instructor’s ID, name, and department building are shown?
+a)
+
+CREATE VIEW instructor_info AS
+SELECT ID, name, building
+FROM instructor, department
+WHERE instructor.dept name= department.dept name;
+b)
+
+CREATE VIEW instructor_info 
+SELECT ID, name, building
+FROM instructor, department;
+c)
+
+CREATE VIEW instructor_info AS
+SELECT ID, name, building
+FROM instructor;
+d)
+
+CREATE VIEW instructor_info AS
+SELECT ID, name, building
+FROM department;
+
+Answer: a
+Explanation: The instructor and department relations must be joined on the dept_name attribute to get building for each instructor.
+
+69. Suppose we have a view defined as:
+CREATE VIEW instructor_info AS
+SELECT ID, name, building
+FROM instructor, department
+WHERE instructor.dept_name = department.dept_name;
+If we execute:
+
+INSERT INTO instructor_info VALUES ('69987', 'White', 'Taylor');
+What will be the values of the attributes in the base relations (instructor and department) that are not included in the view?
+a) Default value
+b) Null
+c) Error statement
+d) 0
+
+Answer: b
+Explanation: Attributes not specified in the INSERT will take NULL values if no constraints exist; otherwise, the operation fails.
+
+70. Which of the following SQL statements correctly defines a view named faculty that lists the ID, name, and department name of all instructors?
+a)
+
+CREATE VIEW faculty AS
+SELECT ID, name, dept_name
+FROM instructor;
+b)
+
+CREATE VIEW faculty
+SELECT ID, name, dept_name
+FROM instructor;
+c)
+
+VIEW faculty AS
+SELECT ID, name, dept_name
+FROM instructor;
+d)
+
+CREATE faculty VIEW AS
+SELECT ID, name, dept_name
+FROM instructor;
+
+Answer: a
+Explanation: The correct syntax is CREATE VIEW view_name AS <query expression>;.
+
 
 
 
